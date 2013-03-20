@@ -1,0 +1,16 @@
+es:
+  attributes:
+    created_at: 'Creación'
+    updated_at: 'Actualización'
+
+  activerecord:
+    models:
+      person:
+        one: 'Persona'
+        other: 'Personas'
+
+    attributes:
+      person:
+        name: 'Nombre'
+        lastname: 'Apellido'
+        email: 'Correo'

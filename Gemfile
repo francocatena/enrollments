@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0.beta1'
 
 gem 'sqlite3'
+gem 'simple_form', '~> 3.0.0.beta'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'sidekiq'
@@ -20,10 +21,10 @@ group :development do
 end
 
 group :test do
-  gem 'turn', require: false
+  gem 'turn', require: 'turn/autorun'
   gem 'minitest', require: false
   gem 'capybara', require: false
-  gem 'database_cleaner' # For Capybara
+  gem 'database_cleaner'
   gem 'fabrication'
   gem 'faker'
 end

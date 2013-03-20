@@ -1,0 +1,21 @@
+<% unless notice.blank? %>
+  <div class="alert alert-success"><%= notice %></div>
+<% end %>
+
+<p>
+  <strong><%= Person.human_attribute_name('name') %></strong>:
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong><%= Person.human_attribute_name('lastname') %></strong>:
+  <%= @person.lastname %>
+</p>
+
+<p>
+  <strong><%= Person.human_attribute_name('email') %></strong>:
+  <%= @person.email %>
+</p>
+
+<%= link_to t('label.edit'), edit_person_path(@person) %> |
+<%= link_to t('label.list'), people_path %>

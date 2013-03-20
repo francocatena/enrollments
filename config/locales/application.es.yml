@@ -1,0 +1,11 @@
+es:
+  app_name: 'Inscripciones'
+
+  label:
+    destroy: 'Eliminar'
+    edit: 'Editar'
+    list: 'Listado'
+    show: 'Ver'
+
+  message:
+    confirmation: '¿Está seguro?'

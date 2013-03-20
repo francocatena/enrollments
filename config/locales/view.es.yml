@@ -1,0 +1,6 @@
+es:
+  view:
+    people:
+      correctly_created: 'Gracias por inscribirte, en breve te avisamos como salió todo...'
+      correctly_updated: 'Actualizaste tus datos correctamente'
+      correctly_destroyed: 'Se eliminaron los datos de la persona'
