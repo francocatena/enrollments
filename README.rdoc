@@ -6,6 +6,8 @@ Web application to enroll students in courses
 
 === Dependency Status {<img src="https://gemnasium.com/francocatena/enrollments.png?travis"/>}[https://gemnasium.com/francocatena/enrollments]
 
+=== Code Climate {<img src="https://codeclimate.com/github/francocatena/enrollments.png" />}[https://codeclimate.com/github/francocatena/enrollments]
+
 == (The MIT License)
 
 Copyright (c) 2013 Franco Catena
