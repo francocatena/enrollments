@@ -8,6 +8,9 @@ es:
       person:
         one: 'Persona'
         other: 'Personas'
+      course:
+        one: 'Curso'
+        other: 'Cursos'
 
     attributes:
       person:
@@ -15,3 +18,5 @@ es:
         lastname: 'Apellido'
         email: 'Correo'
         identification: 'DNI'
+      course:
+        name: 'Nombre'

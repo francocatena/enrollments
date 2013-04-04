@@ -11,15 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130404022712) do
+ActiveRecord::Schema.define(version: 20130404044510) do
+
+  create_table "courses", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "courses", ["name"], name: "index_courses_on_name", unique: true
 
   create_table "people", force: true do |t|
-    t.string   "name"
-    t.string   "lastname"
-    t.string   "email"
+    t.string   "name",           null: false
+    t.string   "lastname",       null: false
+    t.string   "email",          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "identification"
   end
+
+  add_index "people", ["email"], name: "index_people_on_email", unique: true
 
 end
