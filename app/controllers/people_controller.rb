@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :set_courses, only: [:new, :create, :edit, :update]
 
   # GET /people
   def index
@@ -48,13 +49,18 @@ class PeopleController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_person
       @person = Person.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def set_courses
+      @courses = Course.unscoped
+    end
+
     def person_params
-      params.require(:person).permit(:name, :lastname, :email, :identification)
+      params.require(:person).permit(
+        :name, :lastname, :email, :identification,
+        enrollments_attributes: [:course_id, :comment]
+      )
     end
 end
