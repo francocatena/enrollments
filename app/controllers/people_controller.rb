@@ -54,7 +54,7 @@ class PeopleController < ApplicationController
     end
 
     def set_courses
-      @courses = Course.unscoped
+      @courses = Course.active
     end
 
     def person_params

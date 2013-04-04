@@ -14,11 +14,13 @@
 ActiveRecord::Schema.define(version: 20130404050751) do
 
   create_table "courses", force: true do |t|
-    t.string   "name",       null: false
+    t.string   "name",                      null: false
+    t.boolean  "active",     default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "courses", ["active"], name: "index_courses_on_active"
   add_index "courses", ["name"], name: "index_courses_on_name", unique: true
 
   create_table "enrollments", force: true do |t|
