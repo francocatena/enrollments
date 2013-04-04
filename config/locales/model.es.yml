@@ -5,18 +5,23 @@ es:
 
   activerecord:
     models:
-      person:
-        one: 'Persona'
-        other: 'Personas'
       course:
         one: 'Curso'
         other: 'Cursos'
+      enrollment:
+        one: 'Inscripción'
+        other: 'Inscripciones'
+      person:
+        one: 'Persona'
+        other: 'Personas'
 
     attributes:
+      course:
+        name: 'Nombre'
+      enrollment:
+        comment: 'Comentario'
       person:
         name: 'Nombre'
         lastname: 'Apellido'
         email: 'Correo'
         identification: 'DNI'
-      course:
-        name: 'Nombre'
