@@ -14,3 +14,4 @@ es:
         name: 'Nombre'
         lastname: 'Apellido'
         email: 'Correo'
+        identification: 'DNI'

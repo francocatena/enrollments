@@ -3,14 +3,17 @@
 
   <div class="form-inputs">
     <div class="row-fluid">
-      <div class="span4">
+      <div class="span3">
         <%= f.input :name, label: false, placeholder: Person.human_attribute_name('name'), input_html: { autofocus: true } %>
       </div>
-      <div class="span4">
+      <div class="span3">
         <%= f.input :lastname, label: false, placeholder: Person.human_attribute_name('lastname') %>
       </div>
-      <div class="span4">
+      <div class="span3">
         <%= f.input :email, label: false, placeholder: Person.human_attribute_name('email') %>
+      </div>
+      <div class="span3">
+        <%= f.input :identification, label: false, placeholder: Person.human_attribute_name('identification') %>
       </div>
     </div>
   </div>

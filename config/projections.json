@@ -1,0 +1,10 @@
+{
+  "test/fabricators/*_fabricator.rb": {
+    "command": "fabricator",
+    "affinity": "model",
+    "alternate": "app/models/%s.rb",
+    "related": "db/schema.rb#%p",
+    "test": "spec/models/%s_spec.rb",
+    "template": "Fabricator :%s donend"
+  }
+}

@@ -22,6 +22,7 @@ es:
     hints:
       person:
         email: '...para avisarte sobre el curso... (*)'
+        identification: '...para el certificado...'
     #   defaults:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'

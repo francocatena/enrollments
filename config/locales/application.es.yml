@@ -7,5 +7,10 @@ es:
     list: 'Listado'
     show: 'Ver'
 
+  helpers:
+    submit:
+      person:
+        create: 'Inscribirme'
+
   message:
     confirmation: '¿Está seguro?'
