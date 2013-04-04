@@ -1,0 +1,9 @@
+<div class="hero-unit">
+  <h1>Muchas gracias por inscribirte</h1>
+
+  <p>Te enviamos un correo a <%= link_to @person.email, "mailto:#{@person.email}" %></p>
+
+  <footer>
+    <%= link_to 'Volver', root_path %>
+  </footer>
+</div>

@@ -25,7 +25,9 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
 
     if @person.save
-      redirect_to @person, notice: t('view.people.correctly_created')
+      session[:person_id] = @person.id
+
+      redirect_to thanks_url
     else
       render action: 'new'
     end
