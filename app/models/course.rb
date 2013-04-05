@@ -5,4 +5,8 @@ class Course < ActiveRecord::Base
 
   has_many :enrollments, dependent: :destroy
   has_many :people, through: :enrollments
+
+  def to_s
+    name
+  end
 end

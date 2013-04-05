@@ -26,12 +26,11 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
 
     if @person.save
-      session[:person_id] = @person.id
       Notifier.delay.new_enrollment(@person.enrollments_last)
 
-      redirect_to thanks_url
+      redirect_to thanks_url, person_id: @person.id
     else
-      render action: 'new'
+      check_if_already_enrolled
     end
   end
 
@@ -53,18 +52,29 @@ class PeopleController < ApplicationController
   end
 
   private
-    def set_person
-      @person = Person.find(params[:id])
-    end
 
-    def set_courses
-      @courses = Course.active
-    end
+  def set_person
+    @person = Person.find(params[:id])
+  end
 
-    def person_params
-      params.require(:person).permit(
-        :name, :lastname, :email, :identification,
-        enrollments_attributes: [:course_id, :comment]
-      )
+  def set_courses
+    @courses = Course.active
+  end
+
+  def check_if_already_enrolled
+    @person = Person.find_by_email(@person.email)
+
+    if @person && @person.enrollments_last.present?
+      redirect_to enrollment_url(@person.enrollments_last, email: @person.email)
+    else
+      render action: 'new'
     end
+  end
+
+  def person_params
+    params.require(:person).permit(
+      :name, :lastname, :email, :identification,
+      enrollments_attributes: [:course_id, :comment]
+    )
+  end
 end

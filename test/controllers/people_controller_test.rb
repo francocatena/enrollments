@@ -27,6 +27,16 @@ class PeopleControllerTest < ActionController::TestCase
     assert_redirected_to thanks_url
   end
 
+  test 'should redirect to enrollment' do
+    enrollment = Fabricate(:enrollment)
+
+    assert_no_difference 'Person.count' do
+      post :create, person: { email: enrollment.email }
+    end
+
+    assert_redirected_to enrollment_url(enrollment, email: enrollment.email)
+  end
+
   test 'should show person' do
     get :show, id: @person
     assert_response :success

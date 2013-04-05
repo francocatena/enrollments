@@ -1,10 +1,8 @@
 require 'test_helper'
 
 class ThanksControllerTest < ActionController::TestCase
-  test 'should get index with person' do
-    session[:person_id] = Fabricate(:person).id
-
-    get :index
+  test 'should get thanks with person' do
+    get :index, {}, {}, { person_id: Fabricate(:person).id }
     assert_response :success
   end
 

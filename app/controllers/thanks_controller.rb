@@ -1,7 +1,8 @@
 class ThanksController < ApplicationController
+  # GET /thanks
   def index
-    if session[:person_id]
-      @person = Person.find session.delete(:person_id)
+    if flash[:person_id]
+      @person = Person.find flash[:person_id]
     else
       redirect_to root_url
     end

@@ -7,4 +7,8 @@ class Enrollment < ActiveRecord::Base
 
   belongs_to :person
   belongs_to :course
+
+  def to_s
+    "#{person} -> #{course}"
+  end
 end
