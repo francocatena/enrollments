@@ -4,5 +4,6 @@
 /db/*.sqlite3-journal
 
 /doc
+/config/app_config.yml
 /log/*.log
 /tmp

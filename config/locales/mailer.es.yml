@@ -1,0 +1,4 @@
+es:
+  notifier:
+    new_enrollment:
+      subject: 'Bienvenido'
