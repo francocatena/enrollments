@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :set_person, only:  [:show, :edit, :update, :destroy]
   before_action :set_courses, only: [:new, :create, :edit, :update]
 
   # GET /people
@@ -26,6 +26,7 @@ class PeopleController < ApplicationController
 
     if @person.save
       session[:person_id] = @person.id
+      Notifier.delay.new_enrollment(@person.enrollments_last)
 
       redirect_to thanks_url
     else

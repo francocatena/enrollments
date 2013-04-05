@@ -4,3 +4,7 @@ Fabricator(:person) do
   identification { sequence(:person_id) }
   email          { |attrs| Faker::Internet.email([attrs[:name], attrs[:identification]].join(' ')) }
 end
+
+Fabricator(:person_with_enrollments_attributes, from: :person) do
+  enrollments_attributes { [Fabricate.attributes_for(:enrollment, person_id: nil)] }
+end

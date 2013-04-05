@@ -3,6 +3,8 @@ class Enrollment < ActiveRecord::Base
 
   delegate :email, to: :person
 
+  default_scope -> { order('created_at ASC') }
+
   belongs_to :person
   belongs_to :course
 end

@@ -17,8 +17,10 @@ class PeopleControllerTest < ActionController::TestCase
   end
 
   test 'should create person' do
-    assert_difference('Person.count') do
-      post :create, person: Fabricate.attributes_for(:person)
+    counts = ['Person.count', 'Enrollment.count', 'ActionMailer::Base.deliveries.size']
+
+    assert_difference counts do
+      post :create, person: Fabricate.attributes_for(:person_with_enrollments_attributes)
     end
 
     assert_redirected_to thanks_url
