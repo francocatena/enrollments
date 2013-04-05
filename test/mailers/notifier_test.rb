@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class NotifierTest < ActionMailer::TestCase
-  test 'new_enrollment' do
+  test 'should send new enrollment email' do
     enrollment = Fabricate(:enrollment)
     mail = Notifier.new_enrollment(enrollment)
 

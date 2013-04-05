@@ -3,6 +3,7 @@ require 'test_helper'
 class PeopleControllerTest < ActionController::TestCase
   setup do
     @person = Fabricate(:person)
+    @request.remote_addr = '127.0.0.1'
   end
 
   test 'should get index' do
