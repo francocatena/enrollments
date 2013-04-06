@@ -24,7 +24,7 @@ class PeopleControllerTest < ActionController::TestCase
       post :create, person: Fabricate.attributes_for(:person_with_enrollments_attributes)
     end
 
-    assert_redirected_to thanks_url
+    assert_redirected_to thanks_url(assigns(:person), email: assigns(:person).email)
   end
 
   test 'should redirect to enrollment' do
@@ -34,7 +34,7 @@ class PeopleControllerTest < ActionController::TestCase
       post :create, person: { email: enrollment.email }
     end
 
-    assert_redirected_to enrollment_url(enrollment, email: enrollment.email)
+    assert_redirected_to registered_url(enrollment, email: enrollment.email)
   end
 
   test 'should show person' do

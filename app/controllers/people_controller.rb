@@ -28,7 +28,7 @@ class PeopleController < ApplicationController
     if @person.save
       Notifier.delay.new_enrollment(@person.enrollments_last)
 
-      redirect_to thanks_url, person_id: @person.id
+      redirect_to thanks_url(@person, email: @person.email)
     else
       check_if_already_enrolled
     end
@@ -65,7 +65,7 @@ class PeopleController < ApplicationController
     @person = Person.find_by_email(@person.email)
 
     if @person && @person.enrollments_last.present?
-      redirect_to enrollment_url(@person.enrollments_last, email: @person.email)
+      redirect_to registered_url(@person.enrollments_last, email: @person.email)
     else
       render action: 'new'
     end

@@ -1,8 +1,8 @@
 Enrollments::Application.routes.draw do
-  resources :enrollments, only: [:show]
   resources :people
 
-  get 'thanks', to: 'thanks#index'
+  get 'registered/:id/:email', to: 'enrollments#show', as: 'registered'
+  get 'thanks/:id/:email', to: 'thanks#index', as: 'thanks'
 
   root to: 'people#new'
 end
