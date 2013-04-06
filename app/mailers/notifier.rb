@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  default from: 'notificaciones@quieroruby.com.ar'
+  default from: 'Quiero Ruby <notificaciones@quieroruby.com.ar>'
 
   def new_enrollment(enrollment)
     @enrollment = enrollment

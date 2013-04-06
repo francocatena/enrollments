@@ -62,10 +62,10 @@ class PeopleController < ApplicationController
   end
 
   def check_if_already_enrolled
-    @person = Person.find_by_email(@person.email)
+    person = Person.find_by_email(@person.email)
 
-    if @person && @person.enrollments_last.present?
-      redirect_to registered_url(@person.enrollments_last, email: @person.email)
+    if person && person.enrollments_last.present?
+      redirect_to registered_url(person.enrollments_last, email: person.email)
     else
       render action: 'new'
     end
