@@ -16,6 +16,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'thin'
+end
+
 group :test do
   gem 'fabrication'
   gem 'faker'
