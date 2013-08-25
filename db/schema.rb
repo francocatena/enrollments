@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130404050751) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "courses", force: true do |t|
     t.string   "name",                      null: false
     t.boolean  "active",     default: true, null: false
@@ -20,8 +23,8 @@ ActiveRecord::Schema.define(version: 20130404050751) do
     t.datetime "updated_at"
   end
 
-  add_index "courses", ["active"], name: "index_courses_on_active"
-  add_index "courses", ["name"], name: "index_courses_on_name", unique: true
+  add_index "courses", ["active"], name: "index_courses_on_active", using: :btree
+  add_index "courses", ["name"], name: "index_courses_on_name", unique: true, using: :btree
 
   create_table "enrollments", force: true do |t|
     t.text     "comment"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20130404050751) do
     t.datetime "updated_at"
   end
 
-  add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id"
-  add_index "enrollments", ["person_id"], name: "index_enrollments_on_person_id"
+  add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id", using: :btree
+  add_index "enrollments", ["person_id"], name: "index_enrollments_on_person_id", using: :btree
 
   create_table "people", force: true do |t|
     t.string   "name",           null: false
@@ -43,6 +46,6 @@ ActiveRecord::Schema.define(version: 20130404050751) do
     t.string   "identification"
   end
 
-  add_index "people", ["email"], name: "index_people_on_email", unique: true
+  add_index "people", ["email"], name: "index_people_on_email", unique: true, using: :btree
 
 end
