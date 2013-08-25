@@ -13,9 +13,14 @@ set :use_sudo, false
 set :deploy_to, '/var/rails/enrollments'
 set :shared_children, %w(log)
 
-role :web, 'quieroruby.com.ar'
-role :app, 'quieroruby.com.ar'
-role :db,  'quieroruby.com.ar', primary: true
+role :web, '192.241.250.69'
+role :app, '192.241.250.69'
+role :db,  '192.241.250.69', primary: true
+
+# For Rbenv
+set :default_environment, {
+  'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+}
 
 before 'deploy:finalize_update', 'deploy:create_shared_symlinks'
 after 'deploy:update_code', 'deploy:create_tmp_pids_symlink'
