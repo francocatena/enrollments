@@ -17,5 +17,31 @@
   <%= @person.email %>
 </p>
 
+<% unless @person.enrollments.empty? %>
+  <table class="table table-hover table-condensed table-bordered">
+    <caption>
+      <h3 class="text-left">
+        <%= Enrollment.model_name.human count: @person.enrollments.count %>
+      </h3>
+    </caption>
+
+    <thead>
+      <tr>
+        <th><%= Course.model_name.human %></th>
+        <th><%= Enrollment.human_attribute_name 'comment' %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @person.enrollments.each do |enrollment| %>
+        <tr>
+          <td><%= enrollment.course %></td>
+          <td><%= enrollment.comment %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
 <%= link_to t('label.edit'), edit_person_path(@person) %> |
 <%= link_to t('label.list'), people_path %>
