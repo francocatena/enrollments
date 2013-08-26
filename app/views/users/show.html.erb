@@ -1,0 +1,14 @@
+<div class="readonly-data">
+
+  <p>
+    <%= mail_to @user.email %>
+  </p>
+
+</div>
+
+<div class="form-actions">
+  <div class="pull-right">
+    <%= link_to t('label.list'), users_path %>
+  </div>
+  <%= link_to t('label.edit'), edit_user_path(@user), class: 'btn btn-primary' %>
+</div>

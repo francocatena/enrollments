@@ -6,5 +6,8 @@ Enrollments::Application.routes.draw do
     get 'thanks/:id/:email', to: 'thanks#index', as: 'thanks'
   end
 
+  devise_for :users
+  resources :users
+
   root to: 'people#new'
 end

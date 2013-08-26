@@ -27,6 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.13)
+    bcrypt-ruby (3.1.1)
     builder (3.1.4)
     capistrano (2.15.5)
       highline
@@ -45,6 +46,11 @@ GEM
     coffee-script-source (1.6.3)
     connection_pool (1.1.0)
     daemons (1.1.9)
+    devise (3.0.3)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.0)
@@ -71,6 +77,7 @@ GEM
     net-ssh (2.6.8)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    orm_adapter (0.4.0)
     pg (0.16.0)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -139,6 +146,9 @@ GEM
     uglifier (2.2.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    warden (1.2.3)
+      rack (>= 1.0)
+    will_paginate (3.0.4)
 
 PLATFORMS
   ruby
@@ -146,6 +156,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   coffee-rails
+  devise
   fabrication
   faker
   jquery-rails
@@ -158,3 +169,4 @@ DEPENDENCIES
   thin
   turbolinks
   uglifier
+  will_paginate

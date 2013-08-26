@@ -1,0 +1,19 @@
+body {
+  /* 40px to make the container go all the way to the bottom of the navbar */
+  padding-top: 60px;
+}
+
+.iconic {                                                                       
+  font-family: "IconicStroke";                                                  
+  display: inline-block;                                                        
+  text-decoration: none !important;                                             
+  font-size: 1.5em;                                                             
+}                                                                               
+                                                                                
+.iconic.btn-mini {                                                              
+  font-size: 1.25em;                                                            
+}                                                                               
+                                                                                
+.iconic.large {                                                                 
+  font-size: 36px;                                                              
+}

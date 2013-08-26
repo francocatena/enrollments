@@ -11,6 +11,8 @@ gem 'capistrano'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
+gem 'devise'
+gem 'will_paginate'
 
 group :doc do
   gem 'sdoc', require: false

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def require_local
-    redirect_to root_url unless request.local?
+  def require_user
+    redirect_to root_url unless user_signed_in?
   end
 end

@@ -13,9 +13,9 @@ set :use_sudo, false
 set :deploy_to, '/var/rails/enrollments'
 set :shared_children, %w(log)
 
-role :web, '192.241.250.69'
-role :app, '192.241.250.69'
-role :db,  '192.241.250.69', primary: true
+role :web, 'quieroruby.com.ar'
+role :app, 'quieroruby.com.ar'
+role :db,  'quieroruby.com.ar', primary: true
 
 # For Rbenv
 set :default_environment, {

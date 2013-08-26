@@ -14,9 +14,9 @@
       <td><%= person.name %></td>
       <td><%= person.lastname %></td>
       <td><%= person.email %></td>
-      <td><%= link_to t('label.show'), person %></td>
-      <td><%= link_to t('label.edit'), edit_person_path(person) %></td>
-      <td><%= link_to t('label.destroy'), person, method: :delete, data: { confirm: t('message.confirmation') } %></td>
+      <td><%= link_to_show person %></td>
+      <td><%= link_to_edit edit_person_path(person) %></td>
+      <td><%= link_to_destroy person %></td>
     </tr>
     <% end %>
   </tbody>

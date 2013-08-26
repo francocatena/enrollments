@@ -2,15 +2,22 @@ es:
   app_name: 'Inscripciones'
 
   label:
-    destroy: 'Eliminar'
+    delete: 'Eliminar'
     edit: 'Editar'
     list: 'Listado'
     show: 'Ver'
+    new: 'Nuevo'
 
   helpers:
     submit:
       person:
         create: 'Inscribirme'
 
-  message:
+  menu:
+    actions:
+      logout: 'Salir'
+    people: 'Inscriptos'
+    users: 'Usuarios'
+
+  messages:
     confirmation: '¿Está seguro?'

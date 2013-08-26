@@ -12,7 +12,9 @@
  *= require bootstrap/bootstrap
  *= require bootstrap/bootstrap-responsive
  *= require flat-ui/flat-ui
+ *= require commons
  *= require enrollments
+ *= require fonts
  *= require people
  *= require thanks
  */

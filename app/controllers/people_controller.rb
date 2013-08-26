@@ -1,7 +1,7 @@
 class PeopleController < ApplicationController
   before_action :set_person, only:  [:show, :edit, :update, :destroy]
   before_action :set_courses, only: [:new, :create, :edit, :update]
-  before_action :require_local, except: [:new, :create]
+  before_action :require_user, except: [:new, :create]
 
   # GET /people
   def index

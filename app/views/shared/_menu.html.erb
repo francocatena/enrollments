@@ -6,10 +6,23 @@
       </a> 
   
       <%= link_to t('app_name'), root_path, class: 'brand' %>
-
       <div class="nav-collapse"> 
         <ul class="nav">
-          <li class="active">
+          <%= show_menu_link(
+            name: 'people', controllers: 'people', path: people_path
+          ) %>
+          <%= show_menu_link(
+            name: 'users', controllers: 'users', path: users_path
+          ) %>
+        </ul>
+        <ul class="nav pull-right">
+          <li>
+            <%= link_to(
+              '&#x2192;'.html_safe, destroy_user_session_path,
+              'title' => t('menu.actions.logout'), 'class' => 'iconic',
+              'id' => 'logout', 'data-show-tooltip' => true,
+              'data-placement' => 'bottom', 'method' => :delete
+            ) %>
           </li>
         </ul>
       </div>

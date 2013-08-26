@@ -3,10 +3,12 @@ require 'test_helper'
 class PeopleControllerTest < ActionController::TestCase
   setup do
     @person = Fabricate(:person)
-    @request.remote_addr = '127.0.0.1'
+    @user = Fabricate(:user)
   end
 
   test 'should get index' do
+    sign_in @user
+
     get :index
     assert_response :success
     assert_not_nil assigns(:people)
@@ -38,21 +40,29 @@ class PeopleControllerTest < ActionController::TestCase
   end
 
   test 'should show person' do
+    sign_in @user
+
     get :show, id: @person
     assert_response :success
   end
 
   test 'should get edit' do
+    sign_in @user
+
     get :edit, id: @person
     assert_response :success
   end
 
   test 'should update person' do
+    sign_in @user
+
     patch :update, id: @person, person: Fabricate.attributes_for(:person)
     assert_redirected_to person_path(assigns(:person))
   end
 
   test 'should destroy person' do
+    sign_in @user
+
     assert_difference('Person.count', -1) do
       delete :destroy, id: @person
     end
