@@ -7,7 +7,7 @@ class NotifierTest < ActionMailer::TestCase
 
     assert_equal I18n.t('notifier.new_enrollment.subject'), mail.subject
     assert_equal [enrollment.email], mail.to
-    assert_equal ['notificaciones@quieroruby.com.ar'], mail.from
+    assert_equal ['cetem.utn.mendoza@gmail.com'], mail.from
     assert_match 'Hola', mail.body.encoded
 
     assert_difference 'ActionMailer::Base.deliveries.size' do
