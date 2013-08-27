@@ -7,4 +7,8 @@ class Person < ActiveRecord::Base
   def to_s
     name
   end
+
+  def confirm!
+    self.update_attributes! confirmed: true
+  end
 end

@@ -1,6 +1,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th></th>
       <th><%= Person.human_attribute_name('name') %></th>
       <th><%= Person.human_attribute_name('lastname') %></th>
       <th><%= Person.human_attribute_name('email') %></th>
@@ -10,14 +11,7 @@
 
   <tbody>
     <% @people.each do |person| %>
-    <tr>
-      <td><%= person.name %></td>
-      <td><%= person.lastname %></td>
-      <td><%= person.email %></td>
-      <td><%= link_to_show person %></td>
-      <td><%= link_to_edit edit_person_path(person) %></td>
-      <td><%= link_to_destroy person %></td>
-    </tr>
+      <%= render partial: 'person', locals: { person: person } %>
     <% end %>
   </tbody>
 </table>

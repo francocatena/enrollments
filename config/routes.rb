@@ -1,5 +1,7 @@
 Enrollments::Application.routes.draw do
-  resources :people
+  resources :people do
+    patch :confirm, on: :member
+  end
 
   scope constraints: { email: /[^\/]+/ } do
     get 'registered/:id/:email', to: 'enrollments#show', as: 'registered'

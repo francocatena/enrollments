@@ -1,0 +1,12 @@
+<tr class="<%= 'success' if person.confirmed%>">
+  <td><%= link_to(
+    t('view.people.confirm'), confirm_person_path(person, format: :html),
+    method: :patch, data: { remote: true, 'mark-as-confirmed' => true }
+  ) unless person.confirmed %></td>
+  <td><%= person.name %></td>
+  <td><%= person.lastname %></td>
+  <td><%= person.email %></td>
+  <td><%= link_to_show person %></td>
+  <td><%= link_to_edit edit_person_path(person) %></td>
+  <td><%= link_to_destroy person %></td>
+</tr>

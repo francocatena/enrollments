@@ -1,7 +1,9 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only:  [:show, :edit, :update, :destroy]
+  before_action :set_person, only:  [:show, :edit, :update, :destroy, :confirm]
   before_action :set_courses, only: [:new, :create, :edit, :update]
   before_action :require_user, except: [:new, :create]
+
+  layout ->(c) { c.request.xhr? ? false : 'application' }
 
   # GET /people
   def index
@@ -49,6 +51,17 @@ class PeopleController < ApplicationController
   def destroy
     @person.destroy
     redirect_to people_url, notice: t('view.people.correctly_destroyed')
+  end
+
+  # PATCH /people/1/confirm
+  def confirm
+    @person.confirm!
+
+    if request.xhr?
+      render partial: 'person', locals: { person: @person }
+    else
+      redirect_to people_url
+    end
   end
 
   private

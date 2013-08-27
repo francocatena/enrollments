@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130825215532) do
+ActiveRecord::Schema.define(version: 20130827165805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,12 +38,13 @@ ActiveRecord::Schema.define(version: 20130825215532) do
   add_index "enrollments", ["person_id"], name: "index_enrollments_on_person_id", using: :btree
 
   create_table "people", force: true do |t|
-    t.string   "name",           null: false
-    t.string   "lastname",       null: false
-    t.string   "email",          null: false
+    t.string   "name",                           null: false
+    t.string   "lastname",                       null: false
+    t.string   "email",                          null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "identification"
+    t.boolean  "confirmed",      default: false
   end
 
   add_index "people", ["email"], name: "index_people_on_email", unique: true, using: :btree
