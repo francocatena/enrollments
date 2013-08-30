@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PeopleControllerTest < ActionController::TestCase
   setup do
-    @person = Fabricate(:person)
+    @person = Fabricate(:person, confirmed: false)
     @user = Fabricate(:user)
   end
 
@@ -72,8 +72,10 @@ class PeopleControllerTest < ActionController::TestCase
 
   test 'should mark as confirmed' do
     sign_in @user
+    @person = Fabricate(:person_with_enrollments_attributes, confirmed: false)
 
     assert !@person.confirmed
+
 
     patch :confirm, id: @person
 
@@ -83,6 +85,7 @@ class PeopleControllerTest < ActionController::TestCase
 
   test 'should mark as confirmed via ajax' do
     sign_in @user
+    @person = Fabricate(:person_with_enrollments_attributes, confirmed: false)
 
     assert !@person.confirmed
 

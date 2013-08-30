@@ -3,6 +3,7 @@ Fabricator(:person) do
   lastname       { Faker::Name.last_name }
   identification { sequence(:person_id) }
   email          { |attrs| Faker::Internet.email([attrs[:name], attrs[:identification]].join(' ')) }
+  confirmed      { [true, false].sample }
 end
 
 Fabricator(:person_with_enrollments_attributes, from: :person) do

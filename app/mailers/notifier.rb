@@ -6,4 +6,10 @@ class Notifier < ActionMailer::Base
 
     mail to: @enrollment.email
   end
+
+  def confirmed(enrollment)
+    @enrollment = enrollment
+
+    mail to: @enrollment.email
+  end
 end

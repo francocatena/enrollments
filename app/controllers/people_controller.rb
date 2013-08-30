@@ -57,6 +57,8 @@ class PeopleController < ApplicationController
   def confirm
     @person.confirm!
 
+    Notifier.delay.confirmed(@person.enrollments_last)
+
     if request.xhr?
       render partial: 'person', locals: { person: @person }
     else

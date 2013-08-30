@@ -21,6 +21,7 @@ es:
     #       email: 'E-mail.'
     hints:
       person:
+        name: '(Real) va al certificado...'
         email: '...para avisarte sobre el curso... (*)'
         identification: '...para el certificado...'
     #   defaults:

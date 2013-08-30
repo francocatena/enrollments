@@ -2,3 +2,5 @@ es:
   notifier:
     new_enrollment:
       subject: 'Bienvenido'
+    confirmed:
+      subject: 'Confirmado'
