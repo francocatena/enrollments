@@ -10,8 +10,8 @@ test:
   adapter: postgresql
   encoding: utf8
   pool: 5
-  username: enrollments
-  password: enrollments
+  username: <%= ENV['TRAVIS'] ? 'postgres' : 'enrollments' %>
+  password: <%= ENV['TRAVIS'] ? '' : 'enrollments' %>
   database: enrollments_test
 
 production:
