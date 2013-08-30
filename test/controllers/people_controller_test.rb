@@ -71,21 +71,25 @@ class PeopleControllerTest < ActionController::TestCase
   end
 
   test 'should mark as confirmed' do
-    assert !@person.confirmed
+    sign_in @user
 
-    put :confirm, id: @person
+    assert !@person.confirmed
 
-    assert_redirected_to people_url
-    assert @person.reload.confirmed
-  end
+    patch :confirm, id: @person
+
+    assert_redirected_to people_url
+    assert @person.reload.confirmed
+  end
 
   test 'should mark as confirmed via ajax' do
-    assert !@person.confirmed
+    sign_in @user
 
-    xhr :put, :confirm, id: @person
+    assert !@person.confirmed
 
-    assert_response :success
-    assert_template 'people/_person'
-    assert @person.reload.confirmed
-  end
+    xhr :patch, :confirm, id: @person
+
+    assert_response :success
+    assert_template 'people/_person'
+    assert @person.reload.confirmed
+  end
 end
