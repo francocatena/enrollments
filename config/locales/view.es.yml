@@ -1,5 +1,8 @@
 es:
   view:
+    enrollments:
+      with_notebook: 'Con notebook'
+      without_notebook: 'Sin notebook'
     people:
       correctly_created: 'Gracias por inscribirte, en breve te avisamos como salió todo...'
       correctly_updated: 'Actualizaste tus datos correctamente'

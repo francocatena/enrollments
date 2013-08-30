@@ -89,7 +89,7 @@ class PeopleController < ApplicationController
   def person_params
     params.require(:person).permit(
       :name, :lastname, :email, :identification,
-      enrollments_attributes: [:id, :course_id, :comment]
+      enrollments_attributes: [:id, :course_id, :comment, :with_notebook]
     )
   end
 end

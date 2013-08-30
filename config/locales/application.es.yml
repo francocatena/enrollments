@@ -7,6 +7,8 @@ es:
     list: 'Listado'
     show: 'Ver'
     new: 'Nuevo'
+    'yes': 'Si'
+    'no': 'No'
 
   helpers:
     submit:

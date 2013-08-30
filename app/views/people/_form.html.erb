@@ -19,7 +19,17 @@
     <div class="row-fluid">
       <div class="span12">
         <%= f.simple_fields_for :enrollments, person_enrollment do |e_f| %>
-          <%= e_f.association :course, collection: @courses, label: false, include_blank: false %>
+          <div class="row-fluid">
+            <div class="span8">
+              <%= e_f.association(
+                :course, collection: @courses, label: false, include_blank: false
+              ) %>
+            </div>
+            <div class="span4">
+              <%= with_notebook_enrollment_select(e_f) %>
+            </div>
+          </div>
+
           <%= e_f.input(
             :comment, label: false, placeholder: Enrollment.human_attribute_name('comment')
           ) %>

@@ -28,6 +28,7 @@
     <thead>
       <tr>
         <th><%= Course.model_name.human %></th>
+        <th><%= Enrollment.human_attribute_name 'with_notebook' %></th>
         <th><%= Enrollment.human_attribute_name 'comment' %></th>
       </tr>
     </thead>
@@ -36,6 +37,7 @@
       <% @person.enrollments.each do |enrollment| %>
         <tr>
           <td><%= enrollment.course %></td>
+          <td><%= enrollment.with_notebook ? t('label.yes') : t('label.no') %></td>
           <td><%= enrollment.comment %></td>
         </tr>
       <% end %>

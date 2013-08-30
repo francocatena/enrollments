@@ -20,6 +20,7 @@ es:
         name: 'Nombre'
       enrollment:
         comment: 'Comentario'
+        with_notebook: 'Con notebook?'
       person:
         name: 'Nombre'
         lastname: 'Apellido'
