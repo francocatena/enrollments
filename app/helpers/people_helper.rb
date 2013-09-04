@@ -16,4 +16,14 @@ module PeopleHelper
     form.input :with_notebook, collection: collection, prompt: false, 
       label: false, selected: form.object.try(:with_notebook)
   end
+
+  def color_chooser_for_notebook(num)
+    if num >= 15 && num < 20
+      'warning'
+    elsif num >= 20
+      'error'
+    else
+      'info'
+    end
+  end
 end

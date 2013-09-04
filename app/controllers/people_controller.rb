@@ -7,7 +7,11 @@ class PeopleController < ApplicationController
 
   # GET /people
   def index
-    @people = Person.all
+    @people = Person.all.order(:id)
+    confirmed_people = Person.confirmed
+
+    @with_notebook = confirmed_people.with_notebook.count
+    @without_notebook = confirmed_people.without_notebook.count
   end
 
   # GET /people/1

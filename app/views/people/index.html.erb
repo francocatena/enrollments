@@ -1,3 +1,31 @@
+<div class="row-fluid">
+  <div class="span4">
+    <h3 class="pull-right"><%= t('view.enrollments.confirmed', count: 2) %>:</h3>
+  </div>
+  <div class="span4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= t('view.enrollments.with_notebook') %></th>
+          <th><%= t('view.enrollments.without_notebook') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="<%= color_chooser_for_notebook(@with_notebook) %>">
+            <%= @with_notebook %>
+          </td>
+          <td class="<%= color_chooser_for_notebook(@without_notebook) %>">
+            <%= @without_notebook %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="span4">
+  </div>
+</div>
+
 <table class="table">
   <thead>
     <tr>
