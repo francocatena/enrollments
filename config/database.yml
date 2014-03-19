@@ -1,23 +1,23 @@
 development:
-  adapter: postgresql
-  encoding: utf8
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
-  username: enrollments
-  password: enrollments
-  database: enrollments_development
+  timeout: 5000
 
 test:
-  adapter: postgresql
-  encoding: utf8
+  adapter: sqlite3
+  database: db/test.sqlite3
   pool: 5
-  username: <%= ENV['TRAVIS'] ? 'postgres' : 'enrollments' %>
-  password: <%= ENV['TRAVIS'] ? '' : 'enrollments' %>
-  database: enrollments_test
+  timeout: 5000
 
 production:
-  adapter: postgresql
-  encoding: utf8
+  adapter: sqlite3
+  database: db/production.sqlite3
   pool: 5
-  username: enrollments
-  password: enrollments
-  database: enrollments_production
+  timeout: 5000
+
+sandbox:
+  adapter: sqlite3
+  database: db/sandbox.sqlite3
+  pool: 5
+  timeout: 5000

@@ -1,25 +1,30 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.0'
+gem 'rails', '~> 4.0.4'
 
-gem 'pg'
-gem 'simple_form', '3.0.0.rc'
+gem 'sqlite3'
+gem 'simple_form'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'sidekiq'
-gem 'capistrano'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'devise'
 gem 'will_paginate'
 
+gem 'unicorn'
+
 group :doc do
   gem 'sdoc', require: false
 end
 
 group :development do
-  gem 'thin'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'unicorn-rails'
 end
 
 group :test do

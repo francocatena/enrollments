@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20130830045235) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "courses", force: true do |t|
     t.string   "name",                      null: false
     t.boolean  "active",     default: true, null: false
@@ -23,8 +20,8 @@ ActiveRecord::Schema.define(version: 20130830045235) do
     t.datetime "updated_at"
   end
 
-  add_index "courses", ["active"], name: "index_courses_on_active", using: :btree
-  add_index "courses", ["name"], name: "index_courses_on_name", unique: true, using: :btree
+  add_index "courses", ["active"], name: "index_courses_on_active"
+  add_index "courses", ["name"], name: "index_courses_on_name", unique: true
 
   create_table "enrollments", force: true do |t|
     t.text     "comment"
@@ -35,8 +32,8 @@ ActiveRecord::Schema.define(version: 20130830045235) do
     t.boolean  "with_notebook", default: false
   end
 
-  add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id", using: :btree
-  add_index "enrollments", ["person_id"], name: "index_enrollments_on_person_id", using: :btree
+  add_index "enrollments", ["course_id"], name: "index_enrollments_on_course_id"
+  add_index "enrollments", ["person_id"], name: "index_enrollments_on_person_id"
 
   create_table "people", force: true do |t|
     t.string   "name",                           null: false
@@ -48,7 +45,7 @@ ActiveRecord::Schema.define(version: 20130830045235) do
     t.boolean  "confirmed",      default: false
   end
 
-  add_index "people", ["email"], name: "index_people_on_email", unique: true, using: :btree
+  add_index "people", ["email"], name: "index_people_on_email", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -66,7 +63,7 @@ ActiveRecord::Schema.define(version: 20130830045235) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
