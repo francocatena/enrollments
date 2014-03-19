@@ -1,31 +1,36 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="iconic">&#xe055;</span>                                    
-      </a> 
-  
-      <%= link_to t('app_name'), root_path, class: 'brand' %>
-      <div class="nav-collapse"> 
-        <ul class="nav">
-          <%= show_menu_link(
-            name: 'people', controllers: 'people', path: people_path
-          ) %>
-          <%= show_menu_link(
-            name: 'users', controllers: 'users', path: users_path
-          ) %>
-        </ul>
-        <ul class="nav pull-right">
-          <li>
-            <%= link_to(
-              '&#x2192;'.html_safe, destroy_user_session_path,
-              'title' => t('menu.actions.logout'), 'class' => 'iconic',
-              'id' => 'logout', 'data-show-tooltip' => true,
-              'data-placement' => 'bottom', 'method' => :delete
-            ) %>
-          </li>
-        </ul>
-      </div>
+<div class="navbar navbar-default navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <%= link_to t('app_name'), root_path, class: 'navbar-brand' %>
+    </div>
+
+    <div class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <%= show_menu_link(
+          name: 'people', controllers: 'people', path: people_path
+        ) %>
+        <%= show_menu_link(
+          name: 'users', controllers: 'users', path: users_path
+        ) %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to(
+            destroy_user_session_path,
+            'title' => t('menu.actions.logout'),
+            'id' => 'logout', 'data-show-tooltip' => true,
+            'data-placement' => 'bottom', 'method' => :delete
+          ) do %>
+            <span class="glyphicon glyphicon-log-out"></span>
+          <% end %>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

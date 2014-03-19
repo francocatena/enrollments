@@ -1,0 +1,7 @@
+<strong>
+  <%= t('messages.session.expires_in_less_than_two_minutes') %>
+</strong>
+<%= link_to(
+  t('view.devise.renew_session'), touch_path, remote: true,
+  class: 'btn btn-success btn-xs'
+) %>

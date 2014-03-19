@@ -14,3 +14,7 @@ end
 class ActionController::TestCase
     include Devise::TestHelpers
 end
+
+class ActionView::TestCase
+  include SimpleForm::ActionViewExtensions::FormHelper
+end

@@ -1,4 +1,38 @@
 es:
+  navigation:
+    back: 'Volver'
+    loading: 'Cargando'
+
+  sessions:
+    new:
+      title: 'Ingreso'
+      log_in: 'Ingresar'
+      email: 'Correo'
+      password: 'Contraseña'
+      remember_me: 'Recordarme'
+      forgot_password: '¿Olvidaste tu contraseña?'
+    create:
+      invalid: 'Tu correo y/o contraseña no están bien =('
+      logged_in: 'Bienvenido'
+    destroy:
+      logged_out: 'Hasta la próxima'
+
+  password_resets:
+    edit:
+      title: 'Cambiar contraseña'
+      update: 'Actualizar contraseña'
+    update:
+      success: 'Contraseña cambiada correctamente'
+      expired: 'El enlace ha expirado, pida de nuevo las instrucciones'
+    new:
+      title: 'Restablecer contraseña'
+      email: 'Correo'
+      send_instructions: 'Enviar instrucciones'
+      back: 'Volver'
+    create:
+      success: 'Se enviaron instrucciones a tu correo para restablecer la contraseña'
+      not_found: 'El correo que ingresaste no está registrado, verifica que no esté mal escrito'
+
   view:
     enrollments:
       with_notebook: 'Con notebook'
@@ -8,6 +42,10 @@ es:
         other: 'Confirmados'
     people:
       correctly_created: 'Gracias por inscribirte, en breve te avisamos como salió todo...'
-      correctly_updated: 'Actualizaste tus datos correctamente'
+      correctly_updated: 'Actualizaste los datos correctamente'
       correctly_destroyed: 'Se eliminaron los datos de la persona'
       confirm: 'Confirmar'
+    users:
+      correctly_created: 'Usuario creado'
+      correctly_updated: 'Usuario actualizado'
+      correctly_destroyed: 'Usuario eliminado'

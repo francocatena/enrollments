@@ -11,6 +11,6 @@ class Person < ActiveRecord::Base
   end
 
   def confirm!
-    self.update_attributes! confirmed: true
+    update! confirmed: true
   end
 end

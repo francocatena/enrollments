@@ -21,9 +21,9 @@ es:
     #       email: 'E-mail.'
     hints:
       person:
-        name: '(Real) va al certificado...'
+        lastname: 'Para el certificado...'
         email: '...para avisarte sobre el curso... (*)'
-        identification: '...para el certificado...'
+        identification: '...también al certificado...'
     #   defaults:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'

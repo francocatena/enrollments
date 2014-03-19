@@ -1,15 +1,16 @@
-<div class="hero-unit">
-  <h1>Muchas gracias por pre-inscribirte</h1>
-  <br />
+<div class="jumbotron">
+  <h1>Gracias por pre-inscribirte</h1>
 
   <p>
-    Ahora solo resta que pases por el centro de Estudiantes a pagar
-    y terminar la inscripción.
+    Ahora pasá por el Centro de Estudiantes a terminar la inscripción
+    <span class="pull-right">
+      <%= link_to 'Volver', root_path %>
+    </span>
   </p>
-      
-  <p>Te enviamos un correo a <%= mail_to @person.email %></p>
-
-  <footer>
-    <%= link_to 'Volver', root_path %>
-  </footer>
 </div>
+
+<footer>
+  <p class="text-muted">
+    Te enviamos un correo a <%= mail_to @person.email %>.
+  </p>
+</footer>

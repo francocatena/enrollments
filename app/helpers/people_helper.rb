@@ -19,11 +19,22 @@ module PeopleHelper
 
   def color_chooser_for_notebook(num)
     if num >= 15 && num < 20
-      'warning'
+      'label-warning'
     elsif num >= 20
-      'error'
+      'label-danger'
     else
-      'info'
+      'label-default'
     end
   end
+
+  def link_to_confirm person
+    options = {
+      title: t('view.people.confirm'), method: :patch, data: { remote: true }
+    }
+
+    link_to(confirm_person_path(person), options) do
+      content_tag :span, nil, class: 'glyphicon glyphicon-ok'
+    end unless person.confirmed
+  end
 end
+

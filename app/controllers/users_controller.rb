@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  
+
   # GET /users
   def index
     @title = t 'view.users.index_title'
-    @users = User.all.page(params[:page])
+    @users = User.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -57,12 +57,12 @@ class UsersController < ApplicationController
         format.html { render action: 'edit' }
       end
     end
-    
+
   rescue ActiveRecord::StaleObjectError
     flash.alert = t 'view.users.stale_object_error'
     redirect_to edit_user_url(@user)
   end
- 
+
   # DELETE /users/1
   def destroy
     @user.destroy
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
     end
   end
-  
+
   private
 
   def set_user

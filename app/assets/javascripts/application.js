@@ -13,7 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap/bootstrap
+//= require turbolinks-events
+//= require ajax-events
+//= require bootstrap
 //= require enrollments
 //= require people
 //= require thanks

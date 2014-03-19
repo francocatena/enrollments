@@ -92,7 +92,7 @@ class PeopleControllerTest < ActionController::TestCase
     xhr :patch, :confirm, id: @person
 
     assert_response :success
-    assert_template 'people/_person'
+    assert_match /#{people_url}/, @response.body
     assert @person.reload.confirmed
   end
 end

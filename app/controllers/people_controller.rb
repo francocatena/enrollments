@@ -7,7 +7,7 @@ class PeopleController < ApplicationController
 
   # GET /people
   def index
-    @people = Person.all.order(:id)
+    @people = Person.page(params[:page]).order(:id)
     confirmed_people = Person.confirmed
 
     @with_notebook = confirmed_people.with_notebook.count
@@ -64,7 +64,7 @@ class PeopleController < ApplicationController
     Notifier.delay.confirmed(@person.enrollments_last)
 
     if request.xhr?
-      render partial: 'person', locals: { person: @person }
+      redirect_via_turbolinks_to people_url
     else
       redirect_to people_url
     end
@@ -81,7 +81,7 @@ class PeopleController < ApplicationController
   end
 
   def check_if_already_enrolled
-    person = Person.find_by_email(@person.email)
+    person = Person.find_by(email: @person.email)
 
     if person && person.enrollments_last.present?
       redirect_to registered_url(person.enrollments_last, email: person.email)

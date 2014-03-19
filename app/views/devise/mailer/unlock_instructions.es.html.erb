@@ -1,7 +1,7 @@
-<p>Hola <strong><%= @resource.name %></strong>,</p>
+<h2>Hola <strong><%= @resource %></strong>,</h2>
 
 <p>Tu cuenta ha sido bloqueada debido a una cantidad excesiva de intentos fallidos.</p>
 
 <p>Hacé clic en el siguiente enlace para desbloquearla:</p>
 
-<p><%= link_to 'Desbloquear mi cuenta', unlock_url(@resource, unlock_token: @resource.unlock_token) %></p>
+<p><%= link_to 'Desbloquear mi cuenta', unlock_url(@resource, unlock_token: @token) %></p>

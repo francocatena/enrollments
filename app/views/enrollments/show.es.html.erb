@@ -1,11 +1,10 @@
-<div class="hero-unit">
+<div class="jumbotron">
   <h1>Hola <%= @enrollment.person %>,</h1>
 
   <p>
-    Ya estás inscripto en <strong><%= @enrollment.course %></strong>
+    Ya estás inscripto en el curso <strong><%= @enrollment.course %></strong>
+    <span class="pull-right">
+      <%= link_to 'Volver', root_url %>
+    </span>
   </p>
-
-  <footer>
-    <%= link_to 'Volver', root_url %>
-  </footer>
 </div>
