@@ -6,7 +6,7 @@ class ApplicationControllerTest < ActionController::TestCase
     @controller.send :'response=', @response
     @controller.send :'request=', @request
   end
-  
+
   test 'should require user' do
     @controller.send :require_user
     assert_redirected_to root_url

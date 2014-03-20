@@ -13,7 +13,7 @@ module PeopleHelper
       [t('view.enrollments.with_notebook'), true]
     ]
 
-    form.input :with_notebook, collection: collection, prompt: false, 
+    form.input :with_notebook, collection: collection, prompt: false,
       label: false, selected: form.object.try(:with_notebook)
   end
 
