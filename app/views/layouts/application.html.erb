@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag 'application', media: 'all', data: { 'turbolinks-track' => true } %>
     <%= javascript_include_tag 'application', data: { 'turbolinks-track' => true } %>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
     <%= csrf_meta_tags %>
     <%= favicon_link_tag '/favicon.ico' %>
   </head>
@@ -16,6 +21,7 @@
 
     <div class="container">
       <%= render 'shared/menu' if user_signed_in? %>
+      <%= render 'shared/compatibility_warning' %>
       <%= render 'shared/flash' if flash_message.present? %>
       <%= yield %>
     </div>
