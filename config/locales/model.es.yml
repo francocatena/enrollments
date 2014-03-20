@@ -29,6 +29,7 @@ es:
         lastname: 'Apellido'
         email: 'Correo'
         identification: 'DNI'
+        confirmed: 'Confirmado'
       user:
         email: 'Correo'
         password: 'Contraseña'

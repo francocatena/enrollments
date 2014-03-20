@@ -13,6 +13,16 @@
   <%= @person.email %>
 </p>
 
+<p>
+  <strong><%= Person.human_attribute_name('identification') %></strong>:
+  <%= @person.identification %>
+</p>
+
+<p>
+  <strong><%= Person.human_attribute_name('confirmed') %></strong>:
+  <%= @person.confirmed ? confirmed_label : unconfirmed_label %>
+</p>
+
 <% unless @person.enrollments.empty? %>
   <table class="table table-hover table-condensed table-bordered">
     <caption>

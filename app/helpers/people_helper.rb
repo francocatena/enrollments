@@ -36,5 +36,14 @@ module PeopleHelper
       content_tag :span, nil, class: 'glyphicon glyphicon-ok'
     end unless person.confirmed
   end
+
+  def confirmed_label
+    content_tag :label, t('label.yes'), class: 'label label-success'
+  end
+
+  def unconfirmed_label
+    out = content_tag(:label, t('label.no'), class: 'label label-default')
+    out << ' ' << link_to_confirm(@person)
+  end
 end
 
