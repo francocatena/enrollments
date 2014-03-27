@@ -22,7 +22,7 @@ es:
       course:
         name: 'Nombre'
       enrollment:
-        comment: 'Comentario'
+        comment: '¿Algún comentario?'
         with_notebook: 'Notebook'
       person:
         name: 'Nombre'
