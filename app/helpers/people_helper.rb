@@ -32,7 +32,7 @@ module PeopleHelper
       title: t('view.people.confirm'), method: :patch, data: { remote: true }
     }
 
-    link_to(confirm_person_path(person), options) do
+    link_to confirm_person_path(person, page: params[:page]), options do
       content_tag :span, nil, class: 'glyphicon glyphicon-ok'
     end unless person.confirmed
   end

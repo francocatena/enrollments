@@ -64,9 +64,9 @@ class PeopleController < ApplicationController
     Notifier.delay.confirmed(@person.enrollments_last)
 
     if request.xhr?
-      redirect_via_turbolinks_to people_url
+      redirect_via_turbolinks_to people_url(page: params[:page])
     else
-      redirect_to people_url
+      redirect_to people_url(page: params[:page])
     end
   end
 
